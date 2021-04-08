@@ -13,14 +13,14 @@ const initialize = event => {
 };
 
 const trackSantaAlone= inputText => {
-    let instructionsForSanta = checkInput(inputText);
+    let instructionsForSanta = validateInput(inputText);
     let visitedHouses = coordinateMoves(instructionsForSanta);
 
     renderResult(visitedHouses.length);
 };
 
 const trackRoboSantaAndSanta = inputText => {
-    let instructions = checkInput(inputText);
+    let instructions = validateInput(inputText);
     let santasInstructions = '';
     let robosInstructions = '';
 
@@ -44,7 +44,7 @@ const trackRoboSantaAndSanta = inputText => {
     renderResult(allVisitedHouses.length);
 };
 
-const checkInput = inputText => {
+const validateInput = inputText => {
     let validInstructions = '';
     for (const i of inputText) {
         if (i === '<' || i === '>' || i === '^' || i === 'v') {
